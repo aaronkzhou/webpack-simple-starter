@@ -1,0 +1,374 @@
+// Main Header
+.main-header {
+    background: $bg-color-secondary;
+    background: linear-gradient(to bottom, darken($bg-color-secondary, 2%) 0%, darken($bg-color-secondary, 3%) 100%); //sass-lint:disable-line no-duplicate-properties
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3);
+    height: $main-header-height;
+    position: fixed;
+    top: 0;
+    transition: $transition-primary;
+    width: 100%;
+    z-index: $z-middle-top;
+
+    &.collapsed {
+        top: -($main-header-height + $spacing-xs);
+    }
+}
+
+// Main logo
+.main-header-logo {
+    color: $brand-color;
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    vertical-align: top;
+}
+
+.main-logo-link {
+    display: block;
+    margin: 0 $spacing-xxs;
+    padding: 0 $spacing-s;
+
+    @include breakpoint($main-nav-breakpoint) {
+        margin: -1px $spacing-xs 0;
+    }
+
+    @include breakpoint($main-nav-breakpoint-2) {
+        margin: -1px $spacing-s 0;
+    }
+}
+
+.main-logo-img {
+    height: auto;
+    width: $main-nav-logo-width;
+}
+
+// Overlay
+.nav-overlay {
+    background: rgba(0, 0, 0, .2);
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: $transition-primary;
+    visibility: hidden;
+    width: 100%;
+    z-index: $z-middle-top;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.invisible {
+        visibility: visible;
+    }
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: none;
+    }
+}
+
+// Navigation button
+.nav-btn {
+    display: block;
+    padding: $main-header-height / 2 ($main-header-height / 5 * 3);
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: $transition-primary;
+    z-index: $z-above-top;
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: none;
+    }
+
+    .nav-icon {
+        @extend .menu-icon;
+    }
+
+    &.active {
+
+        .nav-icon {
+            @extend .close-menu-icon;
+        }
+    }
+}
+
+// Main Navigation
+.main-nav {
+    background: $bg-color-secondary;
+    box-shadow: -1px 0 10px 0 rgba(0, 0, 0, .4);
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    right: -($main-nav-width);
+    top: 0;
+    transition: $transition-secondary;
+    width: $main-nav-width;
+    z-index: $z-top;
+
+    &.opened {
+        right: 0;
+    }
+
+    @include breakpoint($main-nav-breakpoint) {
+        background: none;
+        box-shadow: none;
+        display: inline-block;
+        height: auto;
+        position: static;
+        right: auto;
+        width: auto;
+    }
+}
+
+// Navigation links
+.nav-item {
+    display: none;
+    transition: $transition-secondary;
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.main-nav.opened .nav-item {
+    display: block;
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: inline-block;
+    }
+}
+
+.nav-link {
+    @extend .text-ellipsed;
+    border-left: 5px solid transparent;
+    box-sizing: border-box;
+    color: $font-color-primary;
+    display: block;
+    font-size: $font-size-primary;
+    font-weight: 700;
+    line-height: 1;
+    padding: $spacing-m $spacing-xl;
+    text-decoration: none;
+    transition: $transition-primary;
+    width: 100%;
+
+    &:hover,
+    &.active {
+        background: $bg-color-primary;
+        border-left: 5px solid $brand-color;
+        color: $font-color-primary;
+        text-decoration: none;
+    }
+
+    @include breakpoint($main-nav-breakpoint) {
+        border: 0;
+        color: $font-color-quaternary;
+        font-size: $font-size-xsmall;
+        line-height: 1.15;
+        padding: $spacing-m $spacing-s;
+
+        &:hover,
+        &.active {
+            background: none;
+            border: 0;
+            color: $font-color-primary;
+        }
+    }
+
+    @include breakpoint($main-nav-breakpoint-2) {
+        font-size: $font-size-small;
+        line-height: 1;
+    }
+}
+
+.nav-list.featured .nav-link {
+    font-size: $font-size-large;
+    text-transform: uppercase;
+
+    @include breakpoint($main-nav-breakpoint) {
+        font-size: $font-size-small;
+        padding: $spacing-m;
+    }
+
+    @include breakpoint($main-nav-breakpoint-2) {
+        font-size: $font-size-primary;
+    }
+}
+
+// Nav list
+.nav-list {
+    font-size: 0;
+    padding: 0;
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: inline-block;
+        margin: 0;
+        padding: 0 $spacing-s + 3px;
+    }
+
+    &.featured {
+        margin: $main-header-height 0 0;
+
+        @include breakpoint($main-nav-breakpoint) {
+            border-left: 1px solid $border-color-secondary;
+            border-right: 1px solid $border-color-secondary;
+            margin: 0;
+        }
+    }
+}
+
+// User Details
+.user-details {
+    border-top: 1px solid $border-color-secondary;
+    font-size: 0;
+    margin: $spacing-xxs 0;
+    padding: $spacing-xxs 0;
+
+    @include breakpoint($main-nav-breakpoint) {
+        border: 0;
+        display: block;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+.user-details-item {
+    border-left: 5px solid transparent;
+    color: $font-color-quaternary;
+    font-weight: 700;
+    height: $main-header-height;
+    line-height: $main-header-height;
+    padding: 0 $spacing-xl;
+    text-decoration: none;
+    vertical-align: top;
+
+    &:hover,
+    &.active {
+        background: $bg-color-primary;
+        border-left: 5px solid $brand-color;
+        color: $font-color-primary;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    @include breakpoint($main-nav-breakpoint) {
+        padding: 0 $spacing-m;
+
+        &:hover,
+        &.active {
+            background: none;
+            border-left: 1px solid $border-color-secondary;
+        }
+
+        .icon {
+            display: inline;
+        }
+    }
+}
+
+.user-details-cart {
+    display: none;
+    font-size: $font-size-primary;
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint($main-nav-breakpoint) {
+        border-left: 1px solid $border-color-secondary;
+        font-size: $font-size-xsmall;
+    }
+
+    @include breakpoint($main-nav-breakpoint-2) {
+        font-size: $font-size-small;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.filled {
+        display: block;
+
+        @include breakpoint($main-nav-breakpoint) {
+            display: inline-block;
+        }
+    }
+
+    .icon {
+        font-size: $font-size-primary * 1.5;
+        vertical-align: middle;
+    }
+
+    .cart-items-amount {
+        background: $brand-color;
+        border-radius: 50%;
+        color: $font-color-secondary;
+        display: inline-block;
+        font-size: $font-size-xsmall;
+        height: 20px;
+        line-height: 20px;
+        margin: -($spacing-xxs) $spacing-xs - 2px 0;
+        text-align: center;
+        vertical-align: middle;
+        width: 20px;
+
+        @include breakpoint($main-nav-breakpoint) {
+            margin: 0;
+            position: absolute;
+            right: 10px;
+            top: 8px;
+        }
+    }
+
+    .cart-text {
+        display: inline-block;
+
+        @include breakpoint($main-nav-breakpoint) {
+            text-indent: -99px;
+        }
+    }
+}
+
+.user-details-login {
+    display: block;
+    font-size: $font-size-primary;
+
+    @include breakpoint($main-nav-breakpoint) {
+        border-left: 1px solid $border-color-secondary;
+        display: inline-block;
+        font-size: $font-size-xsmall;
+    }
+
+    @include breakpoint($main-nav-breakpoint-2) {
+        font-size: $font-size-small;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    .extended {
+        display: inline;
+
+        @include breakpoint($main-nav-breakpoint, $desktop-medium) {
+            display: none;
+        }
+    }
+
+    .icon {
+        font-size: $font-size-primary * 1.5;
+        margin: 0 $spacing-xxs 0 0;
+        vertical-align: middle;
+    }
+}

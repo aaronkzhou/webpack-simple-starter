@@ -1,0 +1,67 @@
+.cell-extra-info {
+    font-weight: 700;
+    padding: 0 $spacing-xxl 0 0;
+}
+
+.cell-extra-info-1,
+.cell-extra-info-2 {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.cell-extra-info-seperator {
+    border-top: 1px dotted $brand-color;
+    color: $brand-color;
+    display: inline-block;
+    margin: 0 $spacing-xs;
+    position: relative;
+    vertical-align: middle;
+    width: 20px;
+
+    &:before,
+    &:after {
+        background: $brand-color;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 9px;
+        left: -9px;
+        position: absolute;
+        top: -5px;
+        width: 9px;
+    }
+
+    &:after {
+        left: auto;
+        right: -9px;
+    }
+}
+
+.bus-stop {
+    .icon-star {
+        color: $brand-color-4;
+    }
+
+    .icon-restaurant {
+        color: $brand-color-2;
+    }
+
+    .table-text-icon {
+        color: $brand-color;
+        font-weight: 700;
+    }
+
+    .no-text-decoration {
+        .icon {
+            margin: 0 $spacing-xxs;
+        }
+    }
+
+    .subtitle-link {
+        .icon {
+            color: $brand-color;
+            margin: 0 $spacing-xxs;
+        }
+    }
+}
+

@@ -1,0 +1,42 @@
+// Contact
+.contact {
+    .subtitle {
+        font-size: $font-size-xlarge;
+    }
+
+    .tag-tertiary {
+        margin: $spacing-xxl 0 0;
+    }
+
+    .text-italic {
+        display: block;
+        font-size: $font-size-small;
+        margin-top: $spacing-xl;
+    }
+}
+
+.contact-content-container {
+    margin: $spacing-xl + $spacing-m 0;
+
+    &.alt {
+        margin-bottom: 0;
+    }
+}
+
+.contact-note-container:nth-child(odd) {
+    margin-bottom: $spacing-xxl;
+    padding-bottom: $spacing-xxl;
+    position: relative;
+
+    &:after {
+        border-bottom: 2px dotted $border-color-primary;
+        bottom: 0;
+        content: "";
+        display: block;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 80%;
+    }
+}

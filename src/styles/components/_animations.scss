@@ -1,0 +1,116 @@
+// Keyframes
+@keyframes resetScale {
+    0% {} //sass-lint:disable-line no-empty-rulesets
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+@keyframes resetTranslateY {
+    0% {} //sass-lint:disable-line no-empty-rulesets
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+@keyframes slideshowZoomIn {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.3);
+    }
+}
+
+// Animation - Cascade up
+.animate-cascade-up {
+    @extend %hidden;
+    animation: resetTranslateY .3s cubic-bezier(.2, 1, .3, 1) 1s forwards;
+    transform: translateY(100px);
+
+    @for $i from 1 through 50 {
+        &:nth-child(#{$i}) {
+            animation-delay: (.04s * ($i - 1)) + .1s;
+        }
+    }
+}
+
+// Animation - Cascade up classes
+.animate-cascade-up-0 {
+    @extend %hidden;
+    animation: resetTranslateY .3s cubic-bezier(.2, 1, .3, 1) 1s forwards;
+    transform: translateY(100px);
+}
+
+@for $i from 1 through 30 {
+    .animate-cascade-up-#{$i} {
+        @extend .animate-cascade-up-0;
+        animation-delay: .04s * ($i - 1);
+    }
+}
+
+// Animation - Cascade down
+.animate-cascade-down {
+    @extend %hidden;
+    animation: resetTranslateY .6s cubic-bezier(.2, 1, .3, 1) 1s forwards;
+    transform: translateY(-10px);
+
+    @for $i from 1 through 50 {
+        &:nth-child(#{$i}) {
+            animation-delay: (.05s * ($i - 1)) + .1s;
+        }
+    }
+}
+
+// Animation - Cascade down classes
+.animate-cascade-down-0 {
+    @extend %hidden;
+    animation: resetTranslateY .6s cubic-bezier(.2, 1, .3, 1) 1s forwards;
+    transform: translateY(-10px);
+}
+
+@for $i from 1 through 30 {
+    .animate-cascade-down-#{$i} {
+        @extend .animate-cascade-down-0;
+        animation-delay: (.05s * ($i - 1) + .1s);
+    }
+}
+
+// Animation - Appear
+.animate-appear {
+    @extend %hidden;
+    animation: resetScale .6s cubic-bezier(.2, 1, .3, 1) 1s forwards;
+    //transform: translateY(-10px);
+
+    @for $i from 1 through 50 {
+        &:nth-child(#{$i}) {
+            animation-delay: (.04s * ($i - 1) + .1s);
+        }
+    }
+}
+
+// Animation - Appear classes
+.animate-appear-0 {
+    @extend %hidden;
+    animation: resetScale .6s cubic-bezier(.2, 1, .3, 1) 1s forwards;
+    transform: scale(0);
+}
+
+@for $i from 1 through 30 {
+    .animate-appear-#{$i} {
+        @extend .animate-cascade-down-0;
+        animation-delay: (.04s * ($i - 1) + .1s);
+    }
+}
+
+// Animation helpers
+.delayed-animation {
+    animation-delay: .5s;
+}

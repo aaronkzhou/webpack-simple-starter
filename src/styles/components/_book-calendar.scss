@@ -1,0 +1,89 @@
+.book-calendar {
+
+    .table {
+        color: $font-color-quaternary;
+        font-weight: 300;
+        text-align: center;
+
+        tr td:first-child {
+            padding: $spacing-s;
+            text-align: left;
+            width: 28%;
+        }
+
+        thead,
+        tbody {
+            background: $bg-color-secondary;
+        }
+
+        td,
+        th {
+            border: 1px solid $border-color-primary;
+            padding: 0;
+            position: relative;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+
+
+    a {
+        box-sizing: border-box;
+        color: $font-color-quaternary;
+        display: inline-block;
+        height: 100%;
+        left: 0;
+        padding: ($spacing-l + 1) $spacing-s;
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        width: 100%;
+
+        &:hover {
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, .46);
+        }
+
+        &.selected {
+            background: $brand-color;
+            color: $font-color-secondary;
+        }
+    }
+
+    .table-responsive {
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .n-a {
+        background: lighten($bg-color-quaternary, 5%);
+        cursor: not-allowed;
+        text-transform: uppercase;
+    }
+
+    .week-day {
+        padding: $spacing-s;
+
+        em {
+            display: block;
+            font-style: normal;
+            font-weight: normal;
+            margin-bottom: 3px;
+        }
+    }
+
+    .min-with-desc {
+        min-width: 175px;
+    }
+
+    .min-with {
+        min-width: 60px;
+    }
+
+    .icon {
+        color: $brand-color;
+        font-size: $font-size-large;
+    }
+
+}

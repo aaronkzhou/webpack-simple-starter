@@ -1,0 +1,46 @@
+// Hero
+.hero-section {
+    animation: slideshowZoomIn 90s;
+    background: $bg-color-tertiary no-repeat center center/cover; // sass-lint:disable-line space-around-operator
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $z-bottom;
+
+    &:after {
+        background: rgba($black, .5);
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.homepage-booking {
+    min-height: 100%;
+    position: relative;
+    transition: $transition-primary;
+    width: 100%;
+}
+
+.booking-form-wrapper {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: $main-header-height 0 0;
+}
+
+.homepage-intro-title {
+    color: $font-color-secondary;
+    font-size: $font-size-xxxlarge;
+    font-weight: 400;
+    margin: 0;
+    padding: 30vh 0 1rem;
+    text-align: center;
+    text-shadow: rgba($black, .4) 1px 1px 4px;
+}
+
+.homepage .cardbox-subtitle {
+    color: $font-color-quinary;
+}
+

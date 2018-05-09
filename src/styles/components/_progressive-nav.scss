@@ -1,0 +1,111 @@
+.progressive-nav {
+    background: $bg-color-secondary;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .23);
+    font-size: 0;
+    left: 50%;
+    overflow: hidden;
+    position: relative;
+    top: -74px;
+    transform: translateX(-50%);
+    transition: $transition-primary;
+    width: 90%;
+    z-index: $z-above-bottom;
+
+    @include breakpoint($tablet) {
+        box-shadow: 0 4px 9px rgba(0, 0, 0, .23);
+        position: absolute;
+        top: -($spacing-l + 4);
+        width: 800px;
+    }
+
+    ol {
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        font-size: $font-size-primary;
+        width: 100%;
+    }
+
+    @include breakpoint($tablet) {
+        // Auto adjust width for every element in the list
+        @for $i from 1 through 5 {
+            li:first-of-type:nth-last-of-type(#{$i}),
+            li:first-of-type:nth-last-of-type(#{$i}) ~ li {
+                width: (100% / #{$i});
+            }
+        }
+    }
+
+    // Mimic numbers on ordered list
+    @for $i from 1 through 5 {
+        li:nth-child(#{$i}) span:before {
+            content: '#{$i}.';
+        }
+    }
+
+    span {
+        color: $font-color-primary;
+        position: relative;
+        transition: $transition-primary;
+
+        &:before {
+            bottom: 3px;
+            color: $brand-color-2;
+            left: -$spacing-l;
+            position: absolute;
+
+            @include breakpoint($tablet) {
+                left: -20px;
+            }
+        }
+    }
+
+    a {
+        box-sizing: border-box;
+        display: inline-block;
+        font-weight: 700;
+        padding: $spacing-m $spacing-m $spacing-m $spacing-xxl;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        width: 100%;
+
+        @include breakpoint($tablet) {
+            padding: $spacing-m 0;
+            text-align: center;
+        }
+
+        &:not(.highlighted):hover span,
+        &:not(.highlighted):focus span {
+            color: $brand-color-2;
+        }
+    }
+
+    .highlighted {
+        position: relative;
+
+        &.active span {
+            color: $brand-color-2;
+        }
+
+        &:after {
+            background: $brand-color-2;
+            bottom: 0;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            width: $spacing-xxs;
+        }
+
+        @include breakpoint($tablet) {
+            &:after {
+                height: $spacing-xxs;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,131 @@
+// Footer
+.footer {
+    background: $bg-color-secondary;
+    padding: $spacing-xxl 0 0;
+    position: relative;
+
+    &:before {
+        border-top: 1px solid $border-color-secondary;
+        box-sizing: border-box;
+        content: '';
+        display: block;
+        margin: 0 auto;
+        padding: 0 5% $spacing-xl;
+        width: 90%;
+
+        @include breakpoint($max-width) {
+            width: calc(#{$max-width} - 10%);
+        }
+    }
+}
+
+.footer-section {
+    margin: $spacing-xs 0;
+}
+
+.footer-title {
+    color: $brand-color;
+    cursor: pointer;
+    font-size: $font-size-small;
+    font-weight: 700;
+    list-style-type: none;
+    margin: 0;
+    padding: $spacing-s;
+    position: relative;
+
+    @include breakpoint($tablet) {
+        cursor: default;
+        padding: 0 0 $spacing-xs;
+    }
+}
+
+.footer-list {
+    display: none;
+    margin: 0;
+    padding: 0 $spacing-s $spacing-s;
+
+    @include breakpoint($tablet) {
+        display: block;
+        height: auto;
+        padding: 0;
+    }
+}
+
+.footer-list-item {
+    list-style-type: none;
+}
+
+.footer-link {
+    color: $font-color-primary;
+    display: block;
+    font-size: $font-size-xsmall;
+    padding: $spacing-xs 0;
+
+    @include breakpoint($tablet) {
+        font-size: $font-size-small;
+    }
+}
+
+// Footer extra info
+.footer-extra-info {
+    background: $brand-color;
+    color: $font-color-secondary;
+    line-height: 1.2;
+    margin: $spacing-xl 0 0;
+    padding: $spacing-xl 0;
+    position: relative;
+}
+
+.footer-cr {
+    font-size: $font-size-small;
+
+    @include breakpoint($phone-medium) {
+        font-size: $font-size-primary;
+    }
+
+    @include breakpoint($tablet) {
+        display: inline-block;
+        max-width: 50%;
+    }
+}
+
+.footer-legal {
+    font-size: $font-size-xsmall;
+    margin: $spacing-s 0 0;
+    padding: 0;
+
+    @include breakpoint($phone-medium) {
+        font-size: $font-size-small;
+    }
+
+    @include breakpoint($tablet) {
+        float: right;
+        font-size: $font-size-primary;
+        margin: 0;
+        max-width: 50%;
+    }
+}
+
+.footer-legal-item {
+    border-left: 1px solid $font-color-secondary;
+    display: inline-block;
+    list-style: none;
+    padding: 0 $spacing-xs;
+
+    &:first-child {
+        border: 0;
+        padding-left: 0;
+    }
+
+    @include breakpoint($tablet) {
+        padding: 0 $spacing-s;
+    }
+}
+
+.footer-legal-link {
+    color: $font-color-secondary;
+
+    &:hover {
+        color: $font-color-secondary;
+    }
+}

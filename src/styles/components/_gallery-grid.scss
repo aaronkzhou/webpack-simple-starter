@@ -1,0 +1,19 @@
+.gallery-grid {
+    list-style: none;
+    padding: 0;
+
+    .col {
+        padding: $spacing-s;
+    }
+
+    img {
+        border-radius: 10px;
+        transition: $transition-secondary;
+        width: 100%;
+
+        &:hover {
+            box-shadow: 0 10px 18px rgba(0, 0, 0, .23);
+            transform: scale(1.04);
+        }
+    }
+}

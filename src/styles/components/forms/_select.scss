@@ -1,0 +1,42 @@
+// Select
+select {
+    appearance: none;
+    background: $bg-color-secondary url('../../img/down.svg') no-repeat right $input-font-size center;
+    border: $input-border;
+    border-radius: $input-radius;
+    box-shadow: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: $font-family-primary;
+    font-size: $input-font-size;
+    height: $input-height;
+    margin: 0;
+    outline: none;
+    padding: 0 ($input-font-size * 3) 0 $input-font-size;
+    transition: $transition-primary;
+    width: 100%;
+
+    // Hide default arrow in ie10 and ie11
+    &::-ms-expand {
+        display: none;
+    }
+
+    // Disabled select
+    &:disabled {
+        background: darken($bg-color-secondary, 3%) url('../../img/down.svg') no-repeat right $input-font-size center;
+        border-color: $input-disabled-color;
+        color: lighten($label-color, 5%);
+        cursor: not-allowed;
+    }
+
+    // Focused select
+    &:focus {
+        border-color: $input-focus-color;
+        box-shadow: 0 0 2px $input-focus-color;
+    }
+}
+
+option {
+    font-family: $font-family-primary;
+    font-size: $input-font-size;
+}

@@ -1,0 +1,142 @@
+// Info list
+.info-list {
+    font-size: 0;
+    padding: 0;
+    text-align: center;
+
+    &.small {
+
+        @include breakpoint($desktop-small) {
+            .info-item {
+                padding: 2% 1%;
+                width: 12%;
+            }
+        }
+
+        .info-icon {
+            background: $bg-color-secondary;
+            padding: 5%;
+        }
+
+        .icon {
+            color: $bg-color-tertiary;
+            font-size: 4rem;
+        }
+
+        .info-title {
+            font-size: 1rem;
+            margin: 0;
+        }
+    }
+}
+
+.info-item {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 2% 2% 4%;
+    transition: $transition-primary;
+    vertical-align: top;
+    width: 46%;
+
+    @include breakpoint($tablet) {
+        width: 21%;
+    }
+}
+
+.info-icon {
+    background: $brand-color;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 15%;
+
+    // Color combinations
+    &.color-1 {
+        background: $brand-color;
+    }
+
+    &.color-2 {
+        background: $brand-color-2;
+    }
+
+    &.color-3 {
+        background: $brand-color-3;
+    }
+
+    &.color-4 {
+        background: $brand-color-4;
+    }
+
+    &.color-5 {
+        background: $brand-color-5;
+    }
+
+    &.color-6 {
+        background: $brand-color-6;
+    }
+
+    &.color-7 {
+        background: $brand-color-7;
+    }
+
+    // Inner icon
+    .icon {
+        color: $font-color-secondary;
+        font-size: $font-size-primary * 5;
+        transition: $transition-primary;
+
+        @include breakpoint($phone-medium) {
+            font-size: $font-size-primary * 7;
+        }
+
+        @include breakpoint($tablet) {
+            font-size: $font-size-primary * 5;
+        }
+
+        @include breakpoint($desktop-small) {
+            font-size: $font-size-primary * 8;
+        }
+
+        @include breakpoint($desktop-medium) {
+            font-size: $font-size-primary * 9;
+        }
+    }
+}
+
+.info-title {
+    color: $font-color-primary;
+    font-size: $font-size-large;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: $spacing-xl $spacing-xs $spacing-s;
+
+    @include breakpoint($phone-medium) {
+        font-size: $font-size-xlarge;
+    }
+
+    @include breakpoint($tablet) {
+        font-size: $font-size-large;
+    }
+
+    @include breakpoint($desktop-small) {
+        font-size: $font-size-xlarge;
+    }
+}
+
+.info-description {
+    font-size: $font-size-small;
+    font-weight: 300;
+    margin: $spacing-s 0;
+
+    @include breakpoint($phone-medium) {
+        font-size: $font-size-primary;
+    }
+
+    @include breakpoint($tablet) {
+        font-size: $font-size-small;
+    }
+
+    @include breakpoint($desktop-small) {
+        font-size: $font-size-primary;
+    }
+}

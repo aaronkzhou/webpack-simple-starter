@@ -1,0 +1,308 @@
+// Fare details
+.fare-details {
+    border-top: 1px solid $border-color-secondary;
+    display: none;
+}
+
+.fare-details-containter {
+    padding: $spacing-xs 0;
+
+    @include breakpoint($phone-medium) {
+        padding: $spacing-m;
+    }
+
+    @include breakpoint($phone-large) {
+        padding: $spacing-xl;
+    }
+
+    @include breakpoint($desktop-small) {
+        padding: $spacing-xxl;
+    }
+}
+
+.fare-detail-box {
+    padding: $spacing-xxs $spacing-xs;
+
+    @include breakpoint($tablet) {
+        padding: $spacing-xxs 0;
+    }
+}
+
+.fare-details-info-wrapper {
+    @include breakpoint($tablet) {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0 0 $spacing-s;
+    }
+}
+
+// Trip fares list
+.trip-fares-list {
+    border-collapse: separate;
+    border-spacing: 0;
+    padding: $spacing-s $spacing-xs;
+
+    @include breakpoint($tablet) {
+        box-sizing: border-box;
+        padding: $spacing-s 0;
+        width: 40%;
+    }
+}
+
+.trip-fare-box {
+    border: 1px solid $border-color-secondary;
+    box-sizing: border-box;
+    font-size: $font-size-primary;
+    padding: 0;
+    text-align: center;
+    transition: $transition-primary;
+    vertical-align: top;
+    width: 50%;
+
+    &:first-child {
+        border-right: 0;
+    }
+
+    &:last-child {
+        border-right: 1px solid $border-color-secondary;
+    }
+
+    &:hover {
+        box-shadow: 0 1px 8px rgba(0, 0, 0, .18);
+    }
+}
+
+.book-fare-btn {
+    box-sizing: border-box;
+    color: $font-color-primary;
+    display: block;
+    padding: $spacing-xs $spacing-s;
+    text-decoration: none;
+
+    &:hover {
+        color: $font-color-primary;
+        text-decoration: none;
+    }
+}
+
+.book-fare-btn-inner {
+    @extend .btn;
+    background: $brand-color;
+    border-radius: 2px;
+    font-size: $font-size-xsmall;
+    font-weight: 700;
+    padding: $spacing-xs $spacing-s;
+    text-transform: uppercase;
+}
+
+.book-fare-btn:hover .book-fare-btn-inner {
+    background: $brand-color-2;
+}
+
+.fare-type {
+    font-size: $font-size-small;
+    font-weight: 700;
+    margin: $spacing-xs 0;
+}
+
+.fare-price {
+    font-size: $font-size-primary * 2;
+    margin: $spacing-xs 0;
+}
+
+.fare-features-list {
+    list-style-type: none;
+    margin: $spacing-m 0 $spacing-xs;
+    padding: 0;
+}
+
+.fare-feature {
+    font-size: $font-size-xsmall;
+    padding: $spacing-xxs + 2px 0;
+}
+
+.fares-features-more-info {
+    font-size: $font-size-xsmall;
+    line-height: 1.25;
+    padding: $spacing-xs;
+    text-align: center;
+}
+
+// Trip schedule
+.trip-schedule {
+    @include breakpoint($tablet) {
+        box-sizing: border-box;
+        padding: $spacing-xxs $spacing-xl 0 0;
+        width: 60%;
+    }
+
+    @include breakpoint($desktop-small) {
+        padding: $spacing-xxs $spacing-xxl 0 0;
+    }
+}
+
+.trip-schedule-title {
+    //background: darken($bg-color-primary, 2%);
+    border-bottom: 1px solid $border-color-secondary;
+    border-top: 1px solid $border-color-secondary;
+    font-size: 0;
+    margin: $spacing-m $spacing-xs;
+    padding: $spacing-xs 0 $spacing-s;
+
+    @include breakpoint($tablet) {
+        margin: $spacing-xs $spacing-xs $spacing-m;
+    }
+}
+
+.service-carrier-logo {
+    display: inline-block;
+    font-size: 1rem;
+    height: auto;
+    vertical-align: middle;
+    width: 30%;
+}
+
+.service-carrier-logo-img { // sass-lint:disable property-sort-order
+    width: 100%;
+    max-width: 110px;
+}
+
+.trip-amenities-list {
+    display: inline-block;
+    font-size: 0;
+    padding: 0;
+    text-align: right;
+    vertical-align: middle;
+    width: 70%;
+}
+
+.trip-amenity {
+    display: inline-block;
+    font-size: $font-size-large;
+    margin: 0 3px;
+
+    .icon {
+        color: $font-color-quaternary;
+    }
+}
+
+.service-number {
+    @extend .text-ellipsed;
+    color: $font-color-quaternary;
+    font-size: $font-size-small;
+    font-weight: 700;
+    padding: $spacing-xxs 0 0;
+    text-transform: uppercase;
+}
+
+.trip-service,
+.trip-schedule-information {
+    @extend .text-ellipsed;
+    font-size: $font-size-small;
+    font-weight: 700;
+    padding: 0 $spacing-m $spacing-m $spacing-xl;
+    position: relative;
+
+    &:before {
+        border-left: 2px dotted lighten($brand-color, 20%);
+        content: '';
+        height: 100%;
+        left: 14px;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+
+    &.arrival:before {
+        display: none;
+    }
+
+    &:after {
+        background: $brand-color;
+        border-radius: 50%;
+        content: '';
+        height: 10px;
+        left: 10px;
+        position: absolute;
+        top: 0;
+        width: 10px;
+    }
+}
+
+.trip-schedule-information {
+
+    &:before {
+        top: 2px;
+    }
+
+    &:after {
+        height: 6px;
+        left: 12px;
+        top: 3px;
+        width: 6px;
+    }
+}
+
+.trip-time,
+.trip-schedule-duration {
+    display: inline-block;
+    margin: 0 $spacing-xs 0 0;
+    min-width: 65px;
+}
+
+.trip-schedule-duration {
+    color: $font-color-quinary;
+    font-weight: 400;
+}
+
+.trip-stop-location {
+    color: $font-color-primary;
+    font-size: $font-size-small;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+        color: $font-color-primary;
+        text-decoration: underline;
+    }
+}
+
+.show-stops-btn {
+    color: $font-color-quinary;
+    font-size: $font-size-small;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $font-color-quaternary;
+        text-decoration: underline;
+    }
+}
+
+.trip-transfer-info {
+    border: 1px solid $border-color-secondary;
+    border-radius: 25px;
+    color: $font-color-quinary;
+    display: inline-block;
+    font-size: $font-size-xsmall;
+    font-weight: 400;
+    margin: $spacing-xs $spacing-xl 0;
+    padding: $spacing-xs - 2px $spacing-s;
+    text-align: center;
+
+    .icon {
+        margin: 0 $spacing-xxs 0 0;
+    }
+}
+
+// Extra conditions
+.extra-conditions .collapse-group {
+    margin: 0;
+}
+
+// Trip tours
+.fare-tours-list,
+.fare-meals-list {
+    border-top: 1px dashed $gray-medium;
+}

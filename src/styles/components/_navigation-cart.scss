@@ -1,0 +1,222 @@
+// Cart navigation
+.cart-nav {
+    @extend .main-header;
+    top: -($main-header-height + $spacing-s);
+    z-index: $z-middle-top;
+
+    @include breakpoint($main-nav-breakpoint) {
+        height: $cart-header-height;
+        top: -($cart-header-height + $spacing-s);
+
+        .main-header-logo {
+            border-right: 1px solid $border-color-secondary;
+            height: $cart-header-height;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .main-logo-link {
+            margin: -3px $spacing-s 0;
+            padding: $spacing-xs $spacing-s;
+        }
+    }
+}
+
+.cart-process .cart-nav {
+    top: 0;
+}
+
+// Cart Total summary
+.cart-nav-total {
+    border-left: 1px solid $border-color-secondary;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: $main-header-height;
+    line-height: 1.1;
+    padding: $spacing-xs + 2px ($spacing-xl * 2) $spacing-xs $spacing-m;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: $transition-primary;
+
+    @include breakpoint($main-nav-breakpoint) {
+        height: $cart-header-height;
+        padding: $spacing-m $spacing-xl;
+    }
+}
+
+.cart-nav-total-txt {
+    color: $font-color-primary;
+    font-size: $font-size-small;
+    font-weight: 700;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.cart-nav-total-amount {
+    color: $font-color-quaternary;
+    font-size: $font-size-small;
+}
+
+.cart-nav-total-icon {
+    @extend .arrow-down-icon;
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: none;
+    }
+}
+
+.cart-nav.opened .cart-nav-total-icon {
+    @extend .arrow-up-icon;
+}
+
+// Cart Progress
+.cart-progress {
+    background: rgba($bg-color-secondary, .95);
+    box-sizing: border-box;
+    display: none;
+    height: 100%;
+    margin: $main-header-height 0 0;
+    position: fixed;
+    top: 0;
+    transition: $transition-primary;
+    width: 100%;
+
+    @include breakpoint($main-nav-breakpoint) {
+        background: none;
+        display: block;
+        height: auto;
+        margin: 0;
+        padding: 0 103px 0 180px;
+        position: static;
+        text-align: center;
+        top: auto;
+    }
+}
+
+.cart-nav.opened .cart-progress {
+    display: block;
+}
+
+// Cart Progress List
+.cart-progress-list {
+    margin: 0 auto;
+    padding: 0;
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: inline-block;
+        margin: 0 auto;
+        width: auto;
+    }
+}
+
+// Cart Progress Item
+.cart-progress-item {
+    border-bottom: 1px solid $border-color-secondary;
+    display: block;
+
+    &:first-child {
+        border-top: 1px solid $border-color-secondary;
+    }
+
+    @include breakpoint($main-nav-breakpoint) {
+        border: 0;
+        display: inline-block;
+        padding: 0 $spacing-m;
+        vertical-align: middle;
+
+        // Arrows
+        &:before,
+        &:after {
+            background: $border-color-primary;
+            content: '';
+            height: 1px;
+            left: -11px;
+            position: absolute;
+            top: 34px;
+            transition: $transition-primary;
+            width: 20px;
+        }
+
+        &:before {
+            transform: translateY(-8px) rotate(60deg);
+        }
+
+        &:after {
+            transform: translateY(8px) rotate(-60deg);
+        }
+
+        &:first-child {
+            border: 0;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+// Cart Progress Link
+.cart-progress-link {
+    box-sizing: border-box;
+    color: $font-color-quinary;
+    display: block;
+    font-size: $font-size-large;
+    font-weight: 700;
+    line-height: 1;
+    padding: $spacing-xl $spacing-l;
+    pointer-events: none;
+    text-decoration: none;
+    transition: $transition-primary;
+
+    &:hover {
+        color: $font-color-primary;
+        text-decoration: none;
+    }
+
+    @include breakpoint($main-nav-breakpoint) {
+        font-size: $font-size-primary;
+        font-weight: 400;
+        height: $cart-header-height;
+        line-height: $cart-header-height;
+        padding: 0 $spacing-s;
+
+        .cart-progress-icon {
+            display: none;
+        }
+    }
+
+    @include breakpoint($main-nav-breakpoint-2) {
+        font-size: 1.1rem;
+        padding: 0 $spacing-l;
+    }
+}
+
+.cart-progress-item.completed .cart-progress-link {
+    color: $font-color-primary;
+    font-weight: 700;
+    pointer-events: auto;
+
+    &:hover {
+        color: darken($brand-color, 10%);
+    }
+}
+
+.cart-progress-icon {
+    display: none;
+    font-size: $font-size-large;
+    font-weight: 700;
+    margin: 0 $spacing-xxs;
+    vertical-align: top;
+}
+
+.cart-progress-item.completed .cart-progress-icon {
+    display: inline;
+
+    @include breakpoint($main-nav-breakpoint) {
+        display: none;
+    }
+}

@@ -1,0 +1,98 @@
+.flexipass {
+
+    .header-logo {
+        img {
+            width: 200px;
+
+            @include breakpoint($tablet) {
+                width: 315px;
+            }
+        }
+    }
+
+    .banner-logo {
+        color: $font-color-secondary;
+        font-size: $font-size-xxlarge * 2;
+        padding-bottom: $spacing-xs;
+    }
+
+    .step-by-step-list {
+        margin-top: $spacing-xxl;
+    }
+
+    // Tour Page
+    .cardbox {
+
+        &:hover {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .23);
+            transform: none;
+        }
+
+        .cardbox-title {
+            height: auto;
+            margin: 3% 5%;
+        }
+
+        .cardbox-subtitle {
+            margin: 0;
+            margin-left: 5%;
+        }
+
+        p {
+            font-weight: 600;
+            padding: 0 5%;
+            text-align: left;
+        }
+    }
+
+    // Ideas Page
+    .multi-cardbox {
+        margin-bottom: $spacing-xl + $spacing-xs;
+        overflow: hidden;
+        padding: $spacing-xs;
+
+        &:hover {
+            // remove cardbox hover effect
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .23);
+            transform: unset;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .heading-3 {
+            font-weight: bold;
+            margin-top: $spacing-m;
+        }
+    }
+
+    .multi-cardbox-footer {
+        padding: $spacing-xs 0 $spacing-m;
+
+        p {
+            font-weight: 700;
+
+            @include breakpoint($tablet) {
+                font-size: $font-size-large;
+            }
+        }
+    }
+
+    .info-title {
+        font-size: $font-size-large;
+    }
+
+    .note-outline-secondary {
+        height: 150px;
+        margin: $spacing-xs;
+        width: 150px;
+
+        .note-content-extra {
+            color: $brand-color-2;
+            font-size: $font-size-large;
+            font-weight: 700;
+            margin: $spacing-xxs 0 $spacing-xs;
+        }
+    }
+}

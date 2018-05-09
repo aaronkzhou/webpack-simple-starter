@@ -1,0 +1,96 @@
+// Checkbox buttons
+input[type='checkbox'] { // sass-lint:disable-line no-qualifying-elements, force-attribute-nesting
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+
+    & + label {
+        color: $font-color-primary;
+        cursor: pointer;
+        font-weight: 400;
+        padding: 0 $spacing-xs;
+        position: relative;
+
+        // Unchecked
+        &:before {
+            animation: expand1st .3s ease;
+            background: $bg-color-secondary;
+            border: 2px solid $border-color-tertiary;
+            border-radius: 3px;
+            content: '';
+            height: $radio-checkbox-size;
+            left: -$spacing-s;
+            position: absolute;
+            top: 1px;
+            transition: $transition-fast;
+            width: $radio-checkbox-size;
+        }
+
+        &:after {
+            border-bottom: 2px solid $bg-color-secondary;
+            border-left: 0 solid transparent;
+            border-right: 2px solid $bg-color-secondary;
+            border-top: 0 solid transparent;
+            content: '';
+            height: 10px;
+            left: -9px;
+            position: absolute;
+            top: 2px;
+            transform: scale(0) rotateZ(0);
+            transition: $transition-primary;
+            width: 5px;
+        }
+    }
+
+    // Checked
+    &:checked + label {
+        &:before {
+            animation: expand2nd .3s ease;
+            background: $brand-color;
+            border-color: $brand-color;
+        }
+
+        &:after {
+            transform: scale(1) rotateZ(45deg);
+        }
+    }
+
+    // Disabled
+    &:disabled {
+        cursor: not-allowed;
+
+        & + label {
+            color: lighten($label-color, 5%);
+            cursor: not-allowed;
+
+            &:before {
+                border-color: $input-disabled-color;
+            }
+        }
+
+        &:checked + label:before {
+            background: $input-disabled-color;
+        }
+    }
+}
+
+// Checkbox transition
+@keyframes expand1st {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes expand2nd {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,18 @@
+// Mixins
+@mixin breakpoint($param1, $param2: false) {
+
+    $declaration: 'only screen and (min-width: #{$param1})';
+
+    @if ($param2 != false) {
+        $declaration: 'only screen and (min-width: #{$param1}) and (max-width: #{$param2})';
+    }
+
+    @media #{$declaration} {
+        @content;
+    }
+}
+
+@mixin bg-gradient($color) {
+    background: $color;
+    background: linear-gradient(to bottom, lighten($color, 5%) 0%, darken($color, 5%) 100%); //sass-lint:disable-line no-duplicate-properties
+}

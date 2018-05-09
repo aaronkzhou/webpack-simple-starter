@@ -1,0 +1,119 @@
+.travelpass {
+
+    .progressive-nav {
+        max-width: $tablet - 100;
+
+        span:before { // sass-lint:disable-line nesting-depth
+            color: $brand-color-4;
+        }
+
+        .highlighted {
+
+            &:after { // sass-lint:disable-line nesting-depth
+                background: $brand-color-4;
+            }
+
+            &.active span { // sass-lint:disable-line nesting-depth
+                color: $brand-color-4;
+            }
+        }
+
+        a:not(.highlighted):hover,  // sass-lint:disable-line nesting-depth
+        a:not(.highlighted):focus { // sass-lint:disable-line nesting-depth
+            span {
+                color: $brand-color-4;
+            }
+        }
+    }
+
+    .txt-color-4 {
+        color: $brand-color-4;
+    }
+
+    .info-btn {
+
+        .price {
+            color: $brand-color-4;
+            font-size: $font-size-xxlarge;
+        }
+
+        .info-btn-img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .step-by-step-list {
+        margin-top: $spacing-xxl;
+    }
+}
+
+// Popup
+.popup-travelpass-content {
+    max-width: $desktop-small - 24;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+
+    .map-img {
+        max-height: 280px;
+    }
+
+    section,
+    .section-container {
+        box-sizing: border-box;
+        padding: $spacing-xl;
+    }
+
+    .divider {
+        width: 90%;
+    }
+
+    .travelpass-price-list {
+        padding: $spacing-xl * 2 $spacing-xl $spacing-m;
+    }
+
+    .itinerary-list {
+        padding: $spacing-xl;
+    }
+
+    .bg-quinary {
+        background: $bg-color-quinary;
+    }
+
+    .icon {
+        color: $brand-color-4;
+
+        &:after {
+            border-color: $brand-color-4;
+        }
+    }
+
+    .list-title {
+        color: $brand-color-4;
+    }
+
+    .list-item:before {
+        color: $brand-color-4;
+    }
+
+    .price {
+        font-size: $font-size-xxxlarge;
+    }
+
+    .book-btn-title {
+        color: $brand-color-4;
+    }
+
+    .book-btn-price {
+        font-size: $font-size-xxxlarge;
+    }
+
+    .currency {
+        font-size: $font-size-large;
+        left: 5px;
+        position: relative;
+        top: 5px;
+        vertical-align: top;
+    }
+}

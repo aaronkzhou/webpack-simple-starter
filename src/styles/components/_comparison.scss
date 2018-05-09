@@ -1,0 +1,235 @@
+.comparison-header-container {
+    background: $bg-color-secondary;
+    position: relative;
+    top: 0;
+    transition: $transition-primary;
+    width: 100%;
+
+    .wrapper-slim {
+        padding: 0;
+    }
+
+    // Sticky header when user scroll down
+    &.active {
+        background: $bg-color-secondary;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3);
+        position: fixed;
+        top: $main-header-height;
+        transition: $transition-primary;
+        width: 100%;
+        z-index: $z-middle;
+
+        .comparison-header {
+            border: 0;
+            height: $main-header-height + $spacing-xs;
+
+            @include breakpoint($desktop-small) {
+                height: $main-header-height;
+                top: $main-header-height;
+            }
+        }
+
+        .comparison-header-title {
+            font-size: $font-size-xlarge;
+            line-height: $main-header-height;
+
+            @include breakpoint($tablet) {
+                font-size: $font-size-xxlarge;
+            }
+        }
+
+        .comparison-header-desc {
+            display: none;
+        }
+
+        .row {
+            margin: 0 auto;
+        }
+
+        // Alt class is added when user scroll down in mobile (and main navigation is hidden)
+        &.alt {
+            top: -($spacing-xs);
+
+            .comparison-header-title {
+                padding-top: $spacing-xs;
+            }
+
+            @include breakpoint($desktop-small) {
+                top: 0;
+
+                .comparison-header-title {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        // Add space at the top to generate white space when title switch to "sticky"
+        & ~ .wrapper-slim {
+            margin-top: 160px;
+
+            @include breakpoint($tablet) {
+                margin-top: 340px;
+            }
+
+            @include breakpoint($desktop-small) {
+                margin-top: 415px;
+            }
+        }
+    }
+}
+
+.comparison-header {
+    border: 5px solid $border-color-primary;
+    border-radius: 50%;
+    height: 130px;
+    margin: 0 auto;
+    width: 130px;
+
+    @include breakpoint($tablet) {
+        height: 300px;
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    @include breakpoint($desktop-small) {
+        height: 375px;
+        width: 375px;
+    }
+
+    &.option-a {
+        border-color: $brand-color;
+
+        .comparison-header-title {
+            color: $brand-color;
+        }
+    }
+
+    &.option-b {
+        border-color: $brand-color-2;
+
+        .comparison-header-title {
+            color: $brand-color-2;
+        }
+    }
+}
+
+.comparison-header-content {
+    @extend .vertical-centered;
+    padding: 0 $spacing-s;
+}
+
+.comparison-header-title {
+    font-size: $font-size-xlarge;
+    font-weight: 600;
+    margin: 0;
+    transition: $transition-primary;
+
+    @include breakpoint($tablet) {
+        font-size: $font-size-xxxlarge;
+    }
+}
+
+.comparison-header-desc {
+    display: none;
+
+    @include breakpoint($tablet) {
+        display: block;
+        font-size: $font-size-primary;
+        font-weight: 400;
+    }
+
+    @include breakpoint($desktop-small) {
+        font-size: $font-size-large;
+    }
+}
+
+.comparison-item-container {
+    padding: 0;
+}
+
+.comparison-item {
+    margin: $spacing-xl 0;
+
+    .expandable-summary {
+        height: 185px;
+
+        @include breakpoint($tablet) {
+            height: 230px;
+        }
+    }
+
+    .col {
+        height: 100%;
+        padding: 0;
+    }
+
+    .icon {
+        @extend .vertical-centered;
+        color: $font-color-tertiary;
+        display: block;
+        font-size: $font-size-xxxlarge;
+        margin: auto;
+        position: relative;
+        transition: $transition-primary;
+
+        @include breakpoint($tablet) {
+            font-size: $font-size-xxxlarge * 3;
+        }
+
+        @include breakpoint($desktop-small) {
+            font-size: $font-size-xxxlarge * 5;
+        }
+
+        &.option-a {
+            color: $brand-color;
+        }
+
+        &.option-b {
+            color: $brand-color-2;
+        }
+    }
+}
+
+.comparison-item-title {
+    color: $brand-color;
+    font-size: $font-size-xlarge;
+    font-weight: 600;
+    margin-top: $spacing-xl;
+
+    @include breakpoint($tablet) {
+        margin-top: $spacing-xxl;
+    }
+}
+
+.comparison-item-summary {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    font-size: $font-size-xsmall;
+    font-weight: 400;
+    height: $font-size-xsmall * 3.6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include breakpoint($tablet) {
+        font-size: $font-size-primary;
+        height: $font-size-primary * 3.6;
+    }
+}
+
+.comparison-item-list-container {
+    padding: 0;
+}
+
+.comparison-item-list {
+    color: $font-color-quaternary;
+    font-size: $font-size-xsmall;
+    list-style-type: none;
+    margin: $spacing-s 0;
+    padding: 0 $spacing-m;
+    text-align: center;
+
+    @include breakpoint($phone-medium) {
+        font-size: $font-size-primary;
+    }
+}

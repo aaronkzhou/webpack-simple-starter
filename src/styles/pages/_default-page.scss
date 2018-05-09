@@ -1,0 +1,140 @@
+.defaultpage {
+    h1,
+    h2,
+    h3 {
+        font-weight: 600;
+        text-align: center;
+    }
+
+    h4 {
+        color: $font-color-primary;
+        font-weight: 600;
+        line-height: 1.7;
+        text-transform: uppercase;
+    }
+
+    h5 {
+        font-size: $font-size-small;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    p {
+        font-size: $font-size-primary;
+        font-weight: 400;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    hr {
+        border: 1px dashed $border-color-primary;
+    }
+
+    ul {
+        font-size: $font-size-primary;
+        list-style-type: none;
+        margin: $spacing-xs 0 $spacing-xxl;
+        padding: 0;
+        text-align: left;
+
+        li {
+            @extend .list-item;
+
+            a {
+                @extend .list-link;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: item;
+
+        li {
+            display: block;
+            margin: $spacing-xs 0;
+            text-align: left;
+
+            &:before {
+                color: $brand-color;
+                content: counter(item) '. ';
+                counter-increment: item;
+                font-weight: 700;
+            }
+        }
+    }
+
+    pre {
+        background-color: $bg-color-quaternary;
+        font-family: $font-family-primary;
+        font-size: $font-size-primary;
+        line-height: 1.5;
+        padding: $spacing-xl $spacing-m;
+        text-align: left;
+        white-space: normal;
+    }
+
+    img {
+        display: block;
+        margin: $spacing-xxl auto;
+    }
+
+    iframe {
+        margin: $spacing-xxl 0;
+    }
+
+    blockquote {
+        font-style: italic;
+        line-height: 1.2;
+        position: relative;
+
+        @include breakpoint($tablet) {
+            padding: 0 $spacing-xxl * 3;
+        }
+
+        &:before,
+        &:after {
+            color: $brand-color;
+            content: '“';
+            font-size: $font-size-xxlarge * 2;
+            left: -40px;
+            position: absolute;
+            top: -15px;
+
+            @include breakpoint($tablet) {
+                left: 100px;
+            }
+        }
+
+        &:after {
+            content: '”';
+            left: auto;
+            right: -40px;
+
+            @include breakpoint($tablet) {
+                left: auto;
+                right: 100px;
+            }
+        }
+    }
+
+    table {
+        margin: $spacing-xl auto;
+    }
+
+    thead {
+        td {
+            color: $brand-color;
+            font-weight: 700;
+            padding: $spacing-s $spacing-m;
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+// Text inputs
+input:not([type]),
+// sass-lint:disable no-qualifying-elements, force-attribute-nesting
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'],
+input[type='time'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='tel'],
+input[type='number'],
+input[type='search'],
+// sass-lint:enable no-qualifying-elements, force-attribute-nesting
+textarea {
+    background: $bg-color-secondary;
+    border: $input-border;
+    border-radius: $input-radius;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-size: $input-font-size;
+    height: $input-height;
+    margin: 0;
+    outline: none;
+    padding: 0 $input-font-size;
+    transition: $transition-primary;
+    width: 100%;
+
+    // Disabled input
+    &:disabled,
+    &[readonly='readonly'] {
+        background: darken($bg-color-secondary, 3%);
+        border-color: $input-disabled-color;
+        color: lighten($label-color, 5%);
+        cursor: not-allowed;
+    }
+
+    // Disabled label
+    &:disabled + label,
+    &[readonly='readonly'] + label {
+        color: lighten($label-color, 5%);
+    }
+
+    // Focused input
+    &:focus:not([readonly]) {
+        border-color: $input-focus-color;
+        box-shadow: 0 0 2px $input-focus-color;
+    }
+
+    // Focused label
+    &:focus:not([readonly]) + label {
+        color: $input-focus-color;
+    }
+
+    // Error on Input
+    &.error,
+    &:focus.error {
+        border-color: $input-error-color;
+        box-shadow: 0 0 2px lighten($input-error-color, 10%);
+
+        + label,
+        + label:after {
+            color: $input-error-color;
+        }
+    }
+}
+
+
+// Input field wrapper
+.txt-field {
+    margin: $spacing-m 0;
+    position: relative;
+
+    &.no-spacing {
+        margin: 0;
+    }
+
+    &.inline {
+        display: inline-block;
+        margin-left: $spacing-xxs;
+    }
+
+    // Input label
+    label {
+        color: darken($border-color-primary, 15%);
+        cursor: text;
+        font-size: $input-font-size;
+        left: 0;
+        line-height: $input-height;
+        padding: 0 calc(#{$input-font-size} + 1px);
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transition: $transition-fast;
+    }
+
+    // Gutter spacing
+    &.col label {
+        left: $gutter-width / 2;
+    }
+
+    &.active {
+        label {
+            font-size: $input-font-size * .75;
+            transform: translateY(-10px);
+            transform-origin: 0 0;
+        }
+
+        input {
+            padding-top: $input-font-size * .875;
+        }
+
+        textarea {
+            padding-top: $input-font-size * 1.5;
+        }
+    }
+}
+
+// Helper and error message
+.txt-msg {
+    color: darken($border-color-primary, 15%);
+    display: block;
+    font-size: $input-font-size * .85;
+    line-height: 1.25;
+    padding: ($input-font-size / 2) $input-font-size;
+
+    &.error {
+        color: $input-error-color;
+    }
+}
+
+// Textarea
+textarea {
+    font-family: $font-family-primary;
+    height: auto;
+    min-height: $input-height;
+    padding: ($input-font-size * .875) $input-font-size;
+    resize: none;
+    width: 100%;
+}
+
+.txt-field textarea {
+    padding: ($input-font-size * 1.5) $input-font-size;
+}
