@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>InterCity® | Bus Tickets From $1 | NZ’s National Network</title>
+        <meta name="description" content="New Zealand&#039;s most popular bus network. Bus tickets from $1 (+booking fee). Bus passes for backpackers. Book bus tickets online - no credit card required." />
+
+        <!--
+
+            ▓█
+             ▒██░
+               ████▒
+                █████▓
+                ▓████░  ███                                       ▒██████▓ ▓██░
+                ▓█▒     ███            ██▒                      ▓█████▓███ ▒██  ██░
+                  ▒     ███   ░▒▓▓▒   ░███▒▓   ░▓▓▓▒     ▒▓▓▓  ▓███         ▒░ ░███▒▒▒▒░    ▒▒▒ ▒▒
+               ░██▒     ███  ████████  █████▒ ███████▒ ▒██████ ███         ▓██  ████████   ███▒ ░░
+             ▒███       ███ ▒██▒  ▓██  ██▒   ███▓░▒███ ███     ███         ▓██  ██▒  ▒███ ░██▓
+           ▒████        ███ ▒██   ░██░ ██▒   ███▓▓▓▓▓▓ ███     ▓███░       ▓██  ██▒   ▓██▒███
+         ▒█████░        ███ ▓██░  ▒██▒ ███▓█▓░███▒▒▓█  ███      ▓█████████ ▓██  ███▓█▒ █████░
+         ██████         ███ ▒██░  ▒██▒ ▒████▓  ▓█████░ ███        ▒██████▓ ▒██  ▒████▒  ███▓
+          ░████░                                                                       ░███
+             ▒██                                                                     ████▒
+
+
+        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+        InterCity © 2017 - All Rights Reserved
+        <web-dev@intercitygroup.co.nz>
+        http://www.intercity.co.nz/
+        https://twitter.com/InterCityBUS
+        https://www.facebook.com/InterCityNZ
+
+        Code by:
+        Diego Teliz - aloha@diegoteliz.com (http://diegoteliz.com)
+        Andreas Gerhards
+        Aaron Zhou
+
+        -->
+
+        <!-- Facebook / Open Graph -->
+        <!-- <meta property="og:url" content="https://example.com/page.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Content Title">
+        <meta property="og:image" content="https://example.com/image.jpg">
+        <meta property="og:description" content="Description Here">
+        <meta property="og:site_name" content="Site Name">
+        <meta property="og:locale" content="en_US">
+        <meta property="article:author" content="InterCity"> -->
+
+        <!-- Twitter -->
+        <!-- <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@site_account">
+        <meta name="twitter:creator" content="@individual_account">
+        <meta name="twitter:url" content="https://example.com/page.html">
+        <meta name="twitter:title" content="Content Title">
+        <meta name="twitter:description" content="Content description less than 200 characters">
+        <meta name="twitter:image" content="https://example.com/image.jpg"> -->
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+        <link href="/css/style.css?ver=1.0.0" rel="stylesheet">
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png?v=kPg3j86AO4">
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png?v=kPg3j86AO4" sizes="32x32">
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png?v=kPg3j86AO4" sizes="16x16">
+        <link rel="manifest" href="/img/favicon/manifest.json?v=kPg3j86AO4">
+        <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg?v=kPg3j86AO4" color="#47c132">
+        <link rel="shortcut icon" href="/favicon.ico?v=kPg3j86AO4">
+        <meta name="apple-mobile-web-app-title" content="InterCity">
+        <meta name="application-name" content="InterCity">
+        <meta name="msapplication-config" content="/img/favicon/browserconfig.xml?v=kPg3j86AO4">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Fixes -->
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+
+        <!-- Google Analytics code -->
+        <!-- TODO: add Google Analytics code here -->
+    </head>
+    <body class="tourpage js-comparison-page js-scrollspy">
+
+        <!-- App preloader -->
+        <div id="preloader"></div>
+
+        <!-- Overlay -->
+        <div class="overlay"></div>
+
+        <!-- Main header -->
+        <header class="main-header js-main-header">
+            <h1 class="main-header-logo">
+                <a href="/" class="main-logo-link">
+                    <img src="/img/intercity-logo.svg" alt="InterCity" class="main-logo-img">
+                </a>
+            </h1>
+            <!-- Main menu -->
+            <nav class="main-nav js-main-nav">
+                <ul class="nav-list featured">
+                    <li class="nav-item animate-cascade-down-1 js-nav-item"><a href="/_static/results.html" class="nav-link js-nav-link">Book</a></li>
+                    <li class="nav-item animate-cascade-down-2 js-nav-item"><a href="#" class="nav-link js-nav-link">Manage</a></li>
+                    <li class="nav-item animate-cascade-down-3 js-nav-item"><a href="#" class="nav-link js-nav-link">Bus status</a></li>
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-item animate-cascade-down-4 js-nav-item"><a href="#" class="nav-link js-nav-link">Day Tours</a></li>
+                    <li class="nav-item animate-cascade-down-5 js-nav-item"><a href="#" class="nav-link js-nav-link">Bus Passes</a></li>
+                    <li class="nav-item animate-cascade-down-6 js-nav-item"><a href="#" class="nav-link js-nav-link">Help &amp; Info</a></li>
+                </ul>
+                <div class="user-details nav-item animate-cascade-down-8 js-nav-item">
+                    <a href="#" class="user-details-item user-details-cart filled">
+                        <svg class="icon"><use xlink:href="/img/sprite.svg#shopping-cart"></use></svg>
+                        <span class="cart-text">Cart</span>
+                        <span class="cart-items-amount">2</span>
+                    </a>
+                    <a href="#" class="user-details-item user-details-login"><svg class="icon"><use xlink:href="/img/sprite.svg#account"></use></svg>Log in <span class="extended">/ Sign up</span></a>
+                </div>
+            </nav>
+
+            <a href="#" class="nav-btn animate-cascade-down js-nav-btn"><span class="nav-icon"></span></a>
+
+            <!-- Navigation overlay -->
+            <div class="nav-overlay js-nav-overlay"></div>
+
+        </header>
+
+        <!-- Main page content -->
+        <main class="main-content">
+            <!-- Intro -->
+            <svg class="icon page-header-switcher"><use xlink:href="/img/sprite.svg#visible"></use></svg>
+            <div class="page-header featured" style="background-image: url('../img/tmp-bg2.jpg');">
+                <div class="header-title-container">
+                    <h1 class="header-title">Milford Sound Day Tour</h1>
+                    <h3 class="header-subtitle">Milford Sound is undoubtedly one of the world's most spectacular natural phenomena and the journey along the 295km Milford Road is equally impressive.</h3>
+                    <ul class="header-extra-info">
+                        <li class="header-extra-info-item">Full day tour</li>
+                        <li class="header-extra-info-item">Departs Queenstown or Te Anau</li>
+                    </ul>
+                </div>
+                <div class="note header-note">
+                    <div class="note-content">
+                        <span class="note-content-extra">Prices from</span>
+                        <span>$125</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour includes -->
+            <section class="section-container">
+                <div class="wrapper">
+                    <h2 class="heading-1">Tour includes</h2>
+                    <ul class="info-list small">
+                        <li class="info-item">
+                            <div class="info-icon"><svg class="icon"><use xlink:href="/img/sprite.svg#bus"></use></svg></div>
+                            <h5 class="info-title">Mountain</h5>
+                        </li>
+                        <li class="info-item">
+                            <div class="info-icon"><svg class="icon"><use xlink:href="/img/sprite.svg#seat"></use></svg></div>
+                            <h5 class="info-title">Dolphins</h5>
+                        </li>
+                        <li class="info-item">
+                            <div class="info-icon"><svg class="icon"><use xlink:href="/img/sprite.svg#bus"></use></svg></div>
+                            <h5 class="info-title">Pictures</h5>
+                        </li>
+                        <li class="info-item">
+                            <div class="info-icon"><svg class="icon"><use xlink:href="/img/sprite.svg#seat"></use></svg>
+                            </div>
+                            <h5 class="info-title">Ship</h5>
+                        </li>
+                        <li class="info-item">
+                            <div class="info-icon"><svg class="icon"><use xlink:href="/img/sprite.svg#bus"></use></svg></div>
+                            <h5 class="info-title">Wifi</h5>
+                        </li>
+                        <li class="info-item">
+                            <div class="info-icon"><svg class="icon"><use xlink:href="/img/sprite.svg#seat"></use></svg></div>
+                            <h5 class="info-title">Commentaries</h5>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Scrollspy Nav -->
+            <div class="sticky-wrapper">
+                <div class="sticky-content" id="sticky-nav">
+                    <ul class="list-group js-scrollspy-nav">
+                        <li class="list-item">
+                            <a href="#!/overview">Overview</a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#!/itinerary">Itinerary</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="highlighted" href="#!/book-now">Book Now</a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#!/faqs">FAQs</a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#!/gallery">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <section class="section-container">
+                <div class="wrapper scrollspy-section" id="overview">
+                    <h2 class="heading-1">Overview</h2>
+                    <h5 class="subtitle">Book a great value Milford Sound day tour from Queenstown and see one of the world's
+                        most spectacular natural attractions. Cruise the fiord and experience this dramatically beautiful landscape
+                        with its towering mountain peaks, gushing waterfalls, ink-dark water and sheer cliffs covered in lush native
+                        rainforest.</h5>
+                </div>
+            </section>
+
+            <!-- Dolphin Watching Cruise -->
+            <section class="section-container no-spacing">
+                <div class="wrapper">
+                    <h2>Dolphin Watching Cruise</h2>
+                    <p class="subtitle">Set off on a Bay of Island cruise, enjoying stunning views of the region's many islands as you head out
+                        to the Cape Breet Lighthouse and through the famous Hole in the Rock (conditions permitting). Throughout your cruise your
+                        skipper will keep an eye out for Dolphins and other marine life, and where possible get up close to the playful creatures.
+                    </p>
+                    <div class="gallery-grid">
+                        <img src="/img/tmp/tours.jpg" alt="-">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-container">
+                <div class="divider gray"></div>
+            </section>
+
+            <!-- Choose from 3 options -->
+            <section class="section-container no-spacing">
+                <div class="wrapper">
+                    <h2 class="heading-2 alt-2">Choose from 3 cruise options:</h2>
+                    <h5 class="subtitle">Choose from a range of Milford Sound day tour options to suit every price range.
+                        All tours include return travel from Queenstown to Milford Sound and back, in a glass roof coach* with free wifi and commentary from
+                        your driver guide, plus a Milford Sound cruise. All cruise options includes commentary on the natural history and wildlife of the area.
+                        All cruise boats have indoor and outdoor seating options allowing viewing and panoramic photo opportunities in all weather conditions.</h5>
+
+                    <ul class="fare-types-list row">
+                        <li class="col s12 m4">
+                            <a class="info-btn color-2" href="#">
+                                <img class="info-btn-img" src="/img/tmp/square-img-01.jpg" alt="Fare type name">
+                                <h5 class="info-btn-title">Standard Cruise</h5>
+                                <p class="info-btn-desc">With plenty of room for up to 50 passangers, this cruise features indoor and outdoor viewing deacks on board and has a Pita Pit on-board for a lunch</p>
+                                <div class="btn">View availability and Prices</div>
+                            </a>
+                        </li>
+                        <li class="col s12 m4">
+                            <a class="info-btn color-2" href="#">
+                                <img class="info-btn-img" src="/img/tmp/square-img-01.jpg" alt="Fare type name">
+                                <h5 class="info-btn-title">Luxury Cruise</h5>
+                                <p class="info-btn-desc">our luxury cruise option features a state-of-the-art new cruise boart with glass ceilings and the  option to have a delicious buffet lunch on-board.</p>
+                                <div class="btn">View availability and Prices</div>
+                            </a>
+                        </li>
+                        <li class="col s12 m4">
+                            <a class="info-btn color-2" href="#">
+                                <img class="info-btn-img" src="/img/tmp/square-img-01.jpg" alt="Fare type name">
+                                <h5 class="info-btn-title">Nature Cruise</h5>
+                                <p class="info-btn-desc">If you are looking for a more personal experience - join us on our small boutique cruise boat for an intimate nature encounter</p>
+                                <div class="btn">View availability and Prices</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+           </section>
+        </main>
+
+        <!-- Itinerary -->
+        <section class="section-container no-spacing">
+            <div class="wrapper itinerary scrollspy-section" id="itinerary">
+                <h2 class="heading-1">Itinerary</h2>
+                <h5 class="subtitle">How your day look when you book any of our 3 available tours</h5>
+                <ul class="list-group underline bold">
+                    <li class="list-item">
+                        <a class="active" href="#!/standard">Standard cruise</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#!/luxury">Luxury cruise</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#!/nature">Nature cruise</a>
+                    </li>
+                </ul>
+
+                <ul class="itinerary-list">
+                    <li class="itinerary-list-item">
+                        <svg class="icon"><use xlink:href="/img/sprite.svg#location"></use>
+                        <div class="itinerary-image">
+                            <img src="/img/tmp/flexipass.jpg" alt="-">
+                        </div>
+                        <div class="itinerary-description">
+                            <time class="tag tag-small tag-rounded-white">7:30am</time>
+                            <h4>Board coach queenstown</h4>
+                            <p>Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="itinerary-list-item">
+                        <svg class="icon"><use xlink:href="/img/sprite.svg#location"></use>
+                        <div class="itinerary-image"></div>
+                        <div class="itinerary-description">
+                            <time class="tag tag-small tag-rounded-white">7:30am</time>
+                            <h4>Board coach queenstown</h4>
+                            <p>Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="itinerary-list-item">
+                        <svg class="icon"><use xlink:href="/img/sprite.svg#location"></use>
+                        <div class="itinerary-image">
+                            <img src="/img/tmp/flexipass.jpg" alt="-">
+                        </div>
+                        <div class="itinerary-description">
+                            <time class="tag tag-small tag-rounded-white">7:30am</time>
+                            <h4>Board coach queenstown</h4>
+                        </div>
+                    </li>
+                    <li class="itinerary-list-item">
+                        <svg class="icon"><use xlink:href="/img/sprite.svg#location"></use>
+                        <div class="itinerary-image">
+                            <img src="/img/tmp/flexipass.jpg" alt="-">
+                        </div>
+                        <div class="itinerary-description">
+                            <h4>Board coach queenstown</h4>
+                            <p>Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                                    Lorem ipsum dolor sit amet, quo aliquid pertinax reformidans ad, mei cu dicunt aperiam constituam.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="itinerary-list-item">
+                        <svg class="icon"><use xlink:href="/img/sprite.svg#location"></use>
+                        <div class="itinerary-image">
+                        </div>
+                        <div class="itinerary-description">
+                            <time class="tag tag-small tag-rounded-white">7:30am</time>
+                            <h4>Board coach queenstown</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section class="section-container">
+            <div class="wrapper scrollspy-section" id="faqs">
+                <h2 class="heading-1">FAQs</h2>
+                <h5 class="subtitle">Some of our most asked questions by our customers</h5>
+                    <div class="extra-conditions fare-detail-box animate-appear">
+                        <div class="collapse-group js-collapse-group">
+                            <h4 class="collapse-toggle js-collapse-toggle">Qustion 1 <span class="collapse-icon"></span></h4>
+                            <div class="collapsible js-collapsible">
+                                <p class="animate-appear">This service is operated in a double decker bus with standard seating on the upper deck and <a href="javascript:void(0);" class="tt-link">InterCity GOLD <span class="tt-content">Something to say</span></a> seating on the lower deck. This service is operated in a double decker bus with standard seating on the upper deck and InterCity GOLD seating on the lower deck. If you have difficulty negotiating steep stairwells, please contact us to discuss your options.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="extra-conditions fare-detail-box animate-appear">
+                        <div class="collapse-group js-collapse-group">
+                            <h4 class="collapse-toggle js-collapse-toggle">Question 2 <span class="collapse-icon"></span></h4>
+                            <div class="collapsible js-collapsible">
+                                <p class="animate-appear">This service is operated in a double decker bus with standard seating on the upper deck and <a href="javascript:void(0);" class="tt-link">InterCity GOLD <span class="tt-content">Something to say</span></a> seating on the lower deck. This service is operated in a double decker bus with standard seating on the upper deck and InterCity GOLD seating on the lower deck. If you have difficulty negotiating steep stairwells, please contact us to discuss your options.</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- Book Now -->
+        <section class="section-container featured page-header no-img">
+            <div class="wrapper scrollspy-section" id="book-now">
+                <h2 class="heading-1">Book Now</h2>
+                <div class="booknow-calendar">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th><div class="min-with-desc"></div></th>
+                                <th><div class="week-day min-with"><em>Mon</em>24 July</div></th>
+                                <th><div class="week-day min-with"><em>Tues</em>25 July</div></th>
+                                <th><div class="week-day min-with"><em>Wed</em>26 July</div></th>
+                                <th><div class="week-day min-with"><em>Thurs</em>27 July</div></th>
+                                <th><div class="week-day min-with"><em>Fri</em>28 July</div></th>
+                                <th><div class="week-day min-with"><em>Sat</em>29 July</div></th>
+                                <th><div class="week-day min-with"><em>Sun</em>30 July</div></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Milford Sound Tour from Queenstown <strong>+ Standard Cruise</strong></td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a class="selected" href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a class="n-a" href="javascript:void(0)">Sold out</a>
+                                </td>
+                                <td>
+                                    <a class="n-a" href="javascript:void(0)">Sold out</a>
+                                </td>
+                                <td>
+                                    <a class="n-a" href="javascript:void(0)">Sold out</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Milford Sound Tour from Queenstown <strong>+ Standard Cruise</strong></td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a class="selected" href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a class="n-a" href="javascript:void(0)">Sold out</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">$139.00</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="section-container">
+            <div class="wrapper scrollspy-section" id="gallery">
+                <h2 class="heading-1">Gallery</h2>
+                <h5 class="subtitle">Expect to see these spectacular shots when you book this tour</h5>
+                <ul class="gallery-grid row">
+                    <li class="col s12 m6 l4">
+                        <a data-fancybox="gallery" href="/img/tmp/tours.jpg">
+                            <img src="/img/tmp/tours.jpg" alt="-">
+                        </a>
+                    </li>
+                    <li class="col s12 m6 l4">
+                        <a data-fancybox="gallery" href="/img/tmp/tours.jpg">
+                            <img src="/img/tmp/tours.jpg" alt="-">
+                        </a>
+                    </li>
+                    <li class="col s12 m6 l4">
+                        <a data-fancybox="gallery" href="/img/tmp/tours.jpg">
+                            <img src="/img/tmp/tours.jpg" alt="-">
+                        </a>
+                    </li>
+                    <li class="col s12 m6 l4">
+                        <a data-fancybox="gallery" href="/img/tmp/tours.jpg">
+                            <img src="/img/tmp/tours.jpg" alt="-">
+                        </a>
+                    </li>
+                    <li class="col s12 m6 l4">
+                        <a data-fancybox="gallery" href="/img/tmp/tours.jpg">
+                            <img src="/img/tmp/tours.jpg" alt="-">
+                        </a>
+                    </li>
+                    <li class="col s12 m6 l4">
+                        <a data-fancybox="gallery" href="/img/tmp/tours.jpg">
+                            <img src="/img/tmp/tours.jpg" alt="-">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- You will also like -->
+        <section class="page-header featured" style="background-image: url('../img/tmp-bg.jpg');">
+            <div class="header-title-container">
+                <h1 class="header-title">You will also like these tours</h1>
+                <div>
+                    <ul class="cardbox-list row">
+                        <li class="cardbox-list-item col s6 m3">
+                            <a class="cardbox small has-note" href="#">
+                                <div class="tag">Full Day Tour</div>
+                                <img class="cardbox-img" src="/img/tmp/travelpass.jpg" alt="-">
+                                <div class="cardbox-info-wrapper">
+                                    <h3 class="cardbox-title">Hobbiton and Waitomo Caves Tour</h3>
+                                    <h5 class="cardbox-subtitle color-1">Departs from Paihia</h5>
+                                    <div class="note small">
+                                        <div class="note-content">$299</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cardbox-list-item col s6 m3">
+                            <a class="cardbox small has-note" href="#">
+                                <div class="tag">Half Day Tour</div>
+                                <img class="cardbox-img" src="/img/tmp/flexipass.jpg" alt="-">
+                                <div class="cardbox-info-wrapper">
+                                    <h3 class="cardbox-title">Hukafalls Jet</h3>
+                                    <h5 class="cardbox-subtitle color-1">Departs from Auckland</h5>
+                                    <div class="note small">
+                                        <div class="note-content">$299</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cardbox-list-item col s6 m3">
+                            <a class="cardbox small has-note" href="#">
+                                <div class="tag">Evening Tour</div>
+                                <img class="cardbox-img" src="/img/tmp/travelpass.jpg" alt="-">
+                                <div class="cardbox-info-wrapper">
+                                    <h3 class="cardbox-title">Tamaki Maori Village Experience</h3>
+                                    <h5 class="cardbox-subtitle color-1">Departs from Auckland</h5>
+                                    <div class="note small">
+                                        <div class="note-content">$299</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cardbox-list-item col s6 m3">
+                            <a class="cardbox small has-note" href="#">
+                                <div class="tag">Half day tour</div>
+                                <img class="cardbox-img" src="/img/tmp/flexipass.jpg" alt="-">
+                                <div class="cardbox-info-wrapper">
+                                    <h3 class="cardbox-title">Full Day Tour</h3>
+                                    <h5 class="cardbox-subtitle color-1">Departs from Auckland</h5>
+                                    <div class="note small">
+                                        <div class="note-content">$199</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="wrapper row">
+                <section class="footer-section col s12 m5 l2 collapse-group mobile-only js-collapse-group">
+                    <h4 class="footer-title js-collapse-toggle">Useful Bus info <span class="collapse-icon"></span></h4>
+                    <ul class="footer-list js-collapsible">
+                        <li class="footer-list-item"><a class="footer-link" href="#">Service Status</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">Bus Stops &amp; Timetables</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">Route Map</a></li>
+                    </ul>
+                </section>
+                <section class="footer-section col s12 m5 l2 collapse-group mobile-only js-collapse-group">
+                    <h4 class="footer-title js-collapse-toggle">Tours and Passes<span class="collapse-icon"></span></h4>
+                    <ul class="footer-list js-collapsible">
+                        <li class="footer-list-item"><a class="footer-link" href="#">Day Tours</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">FlexiPass</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">TravelPass</a></li>
+                    </ul>
+                </section>
+                <section class="footer-section col s12 m5 l2 collapse-group mobile-only js-collapse-group">
+                    <h4 class="footer-title js-collapse-toggle">Helpful info<span class="collapse-icon"></span></h4>
+                    <ul class="footer-list js-collapsible">
+                        <li class="footer-list-item"><a class="footer-link" href="#">FAQs</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">Changes/Refunds</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">Luggage info</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">Travelling with kids</a></li>
+                    </ul>
+                </section>
+                <section class="footer-section col s12 m5 l2 collapse-group mobile-only js-collapse-group">
+                    <h4 class="footer-title js-collapse-toggle">Contact<span class="collapse-icon"></span></h4>
+                    <ul class="footer-list js-collapsible">
+                        <li class="footer-list-item"><a class="footer-link" href="#">Need help with bookings</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">Booking Agents</a></li>
+                        <li class="footer-list-item"><a class="footer-link" href="#">Feedback Form</a></li>
+                    </ul>
+                </section>
+                <div class="socialbox-container">
+                    <div class="socialbox"></div>
+                </div>
+            </div>
+            <div class="footer-extra-info">
+                <div class="wrapper">
+                    <div class="footer-cr">Copyright &copy; 2017 Intercity Group(NZ) Ltd</div>
+                    <ul class="footer-legal">
+                        <li class="footer-legal-item">
+                            <a class="footer-legal-link" href="#">Terms &amp; Conditions</a>
+                        </li>
+                        <li class="footer-legal-item">
+                            <a class="footer-legal-link" href="#">Privacy</a>
+                        </li>
+                        <li class="footer-legal-item">
+                            <a class="footer-legal-link" href="#">Sitemap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/js/lib/jquery.js?ver=1.11.3"><\/script>')</script>
+        <script src='/js/lib/jquery.easing.js?ver=1.3'></script>
+        <script src='/js/lib/jquery.scrollTo.js?ver=2.1.2'></script>
+        <script src='/js/lib/jquery.fancybox.js?ver=3.1.20'></script>
+        <script src='/js/app.js?ver=1.0.0'></script>
+        <script src="/js/lib/svgxuse.js?ver=1.2.6"></script>
+        <!--[if IE 9]>
+        <script src="/js/lib/svg4everybody.js?ver=2.1.9"></script>
+        <script>svg4everybody();</script>
+        <![endif]-->
+    </body>
+</html>

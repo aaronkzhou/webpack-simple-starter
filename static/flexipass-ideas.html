@@ -84,7 +84,7 @@
         <!-- Google Analytics code -->
         <!-- TODO: add Google Analytics code here -->
     </head>
-    <body class="homepage js-homepage">
+    <body class="flexipass">
 
         <!-- App preloader -->
         <div id="preloader"></div>
@@ -102,7 +102,7 @@
             <!-- Main menu -->
             <nav class="main-nav js-main-nav">
                 <ul class="nav-list featured">
-                    <li class="nav-item animate-cascade-down-1 js-nav-item"><a href="/_static/results.html" class="nav-link js-nav-link active">Book</a></li>
+                    <li class="nav-item animate-cascade-down-1 js-nav-item"><a href="/_static/results.html" class="nav-link js-nav-link">Book</a></li>
                     <li class="nav-item animate-cascade-down-2 js-nav-item"><a href="#" class="nav-link js-nav-link">Manage</a></li>
                     <li class="nav-item animate-cascade-down-3 js-nav-item"><a href="#" class="nav-link js-nav-link">Bus status</a></li>
                 </ul>
@@ -125,163 +125,151 @@
 
             <!-- Navigation overlay -->
             <div class="nav-overlay js-nav-overlay"></div>
-        </header>
 
-        <!-- Hero image section -->
-        <div class="hero-section js-hero-section" style="background-image: url('../img/tmp-bg.jpg');"></div>
+        </header>
 
         <!-- Main page content -->
         <main class="main-content">
 
-            <!-- Booking -->
-            <div class="homepage-booking">
-                <div class="booking-form-wrapper">
-                    <h1 class="homepage-intro-title">Where would you like to go?</h1>
-                    <!-- TODO: remove this dummy div below -->
-                    <div style="text-align: center; padding-top:30px;"><img src="/img/tmp-homepage-fields.png" alt="From/Tom"></div>
+            <!-- Intro -->
+            <div class="page-header" style="background-image: url('../img/tmp/Flexipass-Hero-LowerPos.jpg');">
+                <div class="header-title-container">
+                    <figure class="header-logo">
+                        <img src="../img/flexipass-logo.svg" alt="FlexiPass">
+                    </figure>
                 </div>
             </div>
 
-            <!-- Homepage content -->
-
-            <!-- Bus Passes -->
             <section class="section-container centered-content">
-                <div class="wrapper row">
-                    <h2 class="heading-1">Bus Passes</h2>
-                    <h5 class="subtitle">To suit all types of travellers and budgets with great bonuses!</h5>
-                    <div class="col s12 m6">
-                        <a href="#" class="cardbanner">
-                            <h3 class="cardbanner-title"><strong>Flexi</strong>Pass</h3>
-                            <div class="cardbanner-img-container">
-                                <img class="cardbanner-img" src="/img/tmp/flexipass.jpg" alt="FlexiPass">
-                            </div>
-                            <div class="cardbanner-wrapper">
-                                <div class="cardbanner-note-container">
-                                    <div class="note-1 cardbanner-cascade-up-3">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">15 hours</span>
-                                            <span>$125</span>
-                                        </div>
-                                    </div>
-                                    <div class="note-1 cardbanner-cascade-up-2">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">30 hours</span>
-                                            <span>$239</span>
-                                        </div>
-                                    </div>
-                                    <div class="note-1 cardbanner-cascade-up-1">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">60 hours</span>
-                                            <span>$459</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="cardbanner-description">Build your own itinerary with travel on NZ's largest hop-on/hop-off transport network</p>
-                                <div class="btn-secondary">View passes and buy</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col s12 m6">
-                        <a href="#" class="cardbanner alt">
-                            <h3 class="cardbanner-title"><strong>Travel</strong>Pass</h3>
-                            <div class="cardbanner-img-container" style="background-image: url('../img/tmp/travelpass-map.png');">
-                                <img class="cardbanner-img" src="/img/tmp/travelpass.jpg" alt="TravelPass">
-                            </div>
-                            <div class="cardbanner-wrapper">
-                                <div class="cardbanner-note-container">
-                                    <div class="note-2 cardbanner-cascade-up-0">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">Caves &amp; Caverns</span>
-                                            <span>$279</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="cardbanner-description">Pre-planned transport passes for those wanting a set itinerary but flexible timing</p>
-                                <div class="btn-secondary alt">View passes and buy</div>
-                            </div>
-                        </a>
-                    </div>
+                <div class="progressive-nav">
+                    <ol>
+                        <li>
+                            <a class="highlighted" href="flexipass-overview.html"><span>Overview</span></a>
+                        </li>
+                        <li>
+                            <a class="highlighted active" href="flexipass-ideas.html"><span>Ideas</span></a>
+                        </li>
+                        <li>
+                            <a href="flexipass-tours.html"><span>Tours</span></a>
+                        </li>
+                        <li>
+                            <a href="flexipass-buy-pass.html"><span>Buy a Pass</span></a>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="wrapper">
+                    <h2 class="heading-1 brand-color-2">How far will your hours take you?</h2>
+                    <h5 class="subtitle">The best part about travelling with an InterCity FlexiPass is that there is no set itinerary -
+                            go where you want, when you want in your own time. That's why it's the perfect backpacker bus pass for independent travellers.</h5>
                 </div>
             </section>
 
-            <!-- Day Tours -->
-            <section class="section-container dark centered-content">
+            <div class="divider"></div>
+
+            <!-- Ideas -->
+            <section class="section-container centered-content dark">
                 <div class="wrapper">
-                    <h2 class="heading-1">Day Tours</h2>
-                    <h5 class="subtitle">Experience the best tours all round new zealand</h5>
-                    <ul class="cardbox-list row">
-                        <li class="cardbox-list-item multi-sized-grid col s12 m6">
-                            <a class="cardbox has-note" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Hobbiton and Waitomo Day Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note-3">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">Special Deal</span>
-                                            <span>$299</span>
-                                        </div>
-                                    </div>
+                    <h2 class="heading-1 brand-color-2">Travel ideas from our FlexiPass customers</h2>
+                    <p class="subtitle strong">Remeber, these FlexiPass customer plans just show ideas of where you could travel with your FlexiPass - but you can travel wherever you like on our network! With multiple services per day in most areas, exact hours will vary.</p>
+                    <!-- Ideas card -->
+                    <div class="multi-cardbox cardbox">
+                        <h5 class="heading-3">Travel ideas using our</h5>
+                        <h3 class="heading-1 brand-color-2">15 hour FlexiPass</h3>
+                        <ul class="info-list">
+                            <li class="info-item">
+                                <div class="info-image">
+                                    <img src="../img/tmp/square-img-01.jpg" alt="">
                                 </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Milford Sound Coach and Cruise</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Paihia</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
+                                <h5 class="info-title">Free WiFi</h5>
+                                <p class="info-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni commodi rem saepe tempora.</p>
+                            </li>
+                            <li class="info-item">
+                                <div class="info-image">
+                                    <img src="../img/tmp/square-img-01.jpg" alt="">
                                 </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Waitomo Caves Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
+                                <h5 class="info-title">Bring your bike</h5>
+                                <p class="info-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni commodi rem saepe tempora.</p>
+                            </li>
+                            <li class="info-item">
+                                <div class="info-image">
+                                    <img src="../img/tmp/square-img-01.jpg" alt="">
                                 </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Bay of Islands Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Cape Reinga &amp; 90 Mile Beach Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                <h5 class="info-title">Great safety record</h5>
+                                <p class="info-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni commodi rem saepe tempora.</p>
+                            </li>
+                        </ul>
 
-                    <a href="#" class='btn line-through separator'>See all day tours</a>
+                        <div class="divider full-width"></div>
 
+                        <div class="multi-cardbox-footer">
+                            <p>Get your 60 hour pass for just $459</p>
+                            <a class="btn-secondary" href="flexipass-by-pass.html">Buy now</a>
+                        </div>
+                    </div>
+                    <!-- Idea -->
+                    <div class="multi-cardbox cardbox">
+                        <h5 class="heading-3">Travel ideas using our</h5>
+                        <h3 class="heading-1 brand-color-2">30 hour FlexiPass</h3>
+                        <ul class="info-list">
+                            <li class="info-item">
+                                <div class="info-image">
+                                    <img src="../img/tmp/square-img-01.jpg" alt="">
+                                </div>
+                                <h5 class="info-title">Free WiFi</h5>
+                                <p class="info-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni commodi rem saepe tempora.</p>
+                            </li>
+                            <li class="info-item">
+                                <div class="info-image">
+                                    <img src="../img/tmp/square-img-01.jpg" alt="">
+                                </div>
+                                <h5 class="info-title">Bring your bike</h5>
+                                <p class="info-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni commodi rem saepe tempora.</p>
+                            </li>
+                            <li class="info-item">
+                                <div class="info-image">
+                                    <img src="../img/tmp/square-img-01.jpg" alt="">
+                                </div>
+                                <h5 class="info-title">Great safety record</h5>
+                                <p class="info-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni commodi rem saepe tempora.</p>
+                            </li>
+                        </ul>
+
+                        <div class="divider full-width"></div>
+
+                        <div class="multi-cardbox-footer">
+                            <p>Get your 60 hour pass for just $319</p>
+                            <a class="btn-secondary" href="flexipass-by-pass.html">Buy now</a>
+                        </div>
+                    </div>
+                </div> <!-- end-wrapper-->
+
+                <!-- FAQs -->
+                <div class="wrapper">
+                    <div class="collapse-group bg-color-secondary js-collapse-group">
+                        <h4 class="collapse-toggle js-collapse-toggle">What's included in my pass?<span class="collapse-icon"></span></h4>
+                        <div class="collapsible js-collapsible">
+                            <p>Lorem impum door here</p>
+                        </div>
+                    </div>
+                    <div class="collapse-group bg-color-secondary js-collapse-group">
+                        <h4 class="collapse-toggle js-collapse-toggle">What if I don't use all my hours - can I get a refund?<span class="collapse-icon"></span></h4>
+                        <div class="collapsible js-collapsible">
+                            <p>Lorem impum door here</p>
+                        </div>
+                    </div>
+                    <p>Got more questions? Read our full <a class="brand-color-2 strong popup-inline" href="#FAQs-modal">FlexiPass FAQs</a> or check the <a class="brand-color-2 strong popup-inline" href="#tc-modal">FlexiPass terms and conditions.</a></p>
+                </div>
+            </section>
+
+            <section class="section-container centered-content">
+                <div class="wrapper">
+                    <h2 class="heading-1 brand-color-2">Enjoy top NZ day tours using FlexiPass</h2>
+                    <h5 class="subtitle">As well as bus travel around New Zealand, you can use your FlexiPass to book selected sightseeing day tours
+                            with GreatSights New Zealand and awesomeNZ.com. Your FlexiPass covers the travel component and you just pay for the optional extras
+                            (like entrance fees, lunches etc) during the booking process.</h5>
+                    <a class="btn-secondary" href="#">View Day Tours</a>
+                    <p>I'm not interested in any day tours and just want to <a class="brand-color-2 strong" href="flexipass-by-pass.html">buy my pass</a></p>
                 </div>
             </section>
         </main>
@@ -340,6 +328,31 @@
                 </div>
             </div>
         </footer>
+
+        <div id="FAQs-modal" class="popup-content" style="display: none; padding: 50px 5vw; max-width: 800px; text-align: center;">
+            <h3 class="heading-1 brand-color-2">FAQs</h3>
+            <h5 class="subtitle">Some common questions we get asked about FlexiPass</h5>
+            <div class="collapse-group bg-color-secondary js-collapse-group">
+                <h4 class="collapse-toggle js-collapse-toggle">What's included in my pass?<span class="collapse-icon"></span></h4>
+                <div class="collapsible js-collapsible">
+                    <p>Lorem impum door here</p>
+                </div>
+            </div>
+            <div class="collapse-group bg-color-secondary js-collapse-group">
+                <h4 class="collapse-toggle js-collapse-toggle">What if I don't use all my hours - can I get a refund?<span class="collapse-icon"></span></h4>
+                <div class="collapsible js-collapsible">
+                    <p>Lorem impum door here</p>
+                </div>
+            </div>
+            <p style="color: #aaa; font-size: 90%;">Clicking these buttons would simply close the form.</p>
+        </div>
+
+        <div id="tc-modal" class="popup-content" style="display: none; padding: 50px 5vw; max-width: 800px; text-align: center;">
+            <h3 class="heading-1 brand-color-2">FlexiPass terms and conditions</h3>
+            <p>Bacon ipsum dolor amet pork short ribs pork loin doner rump ribeye tail drumstick sausage frankfurter meatball
+                 venison short loin ham hock.</p>
+            <p style="color: #aaa; font-size: 90%;">Clicking these buttons would simply close the form.</p>
+        </div>
 
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

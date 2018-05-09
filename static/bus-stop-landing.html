@@ -8,7 +8,6 @@
         <meta name="description" content="New Zealand&#039;s most popular bus network. Bus tickets from $1 (+booking fee). Bus passes for backpackers. Book bus tickets online - no credit card required." />
 
         <!--
-
             ▓█
              ▒██░
                ████▒
@@ -23,21 +22,16 @@
          ██████         ███ ▒██░  ▒██▒ ▒████▓  ▓█████░ ███        ▒██████▓ ▒██  ▒████▒  ███▓
           ░████░                                                                       ░███
              ▒██                                                                     ████▒
-
-
         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
         InterCity © 2017 - All Rights Reserved
         <web-dev@intercitygroup.co.nz>
         http://www.intercity.co.nz/
         https://twitter.com/InterCityBUS
         https://www.facebook.com/InterCityNZ
-
         Code by:
         Diego Teliz - aloha@diegoteliz.com (http://diegoteliz.com)
         Andreas Gerhards
         Aaron Zhou
-
         -->
 
         <!-- Facebook / Open Graph -->
@@ -84,7 +78,7 @@
         <!-- Google Analytics code -->
         <!-- TODO: add Google Analytics code here -->
     </head>
-    <body class="homepage js-homepage">
+    <body class="bus-stop has-table js-bus-stop-landing js-has-map js-has-bus-stops">
 
         <!-- App preloader -->
         <div id="preloader"></div>
@@ -102,7 +96,7 @@
             <!-- Main menu -->
             <nav class="main-nav js-main-nav">
                 <ul class="nav-list featured">
-                    <li class="nav-item animate-cascade-down-1 js-nav-item"><a href="/_static/results.html" class="nav-link js-nav-link active">Book</a></li>
+                    <li class="nav-item animate-cascade-down-1 js-nav-item"><a href="/_static/results.html" class="nav-link js-nav-link">Book</a></li>
                     <li class="nav-item animate-cascade-down-2 js-nav-item"><a href="#" class="nav-link js-nav-link">Manage</a></li>
                     <li class="nav-item animate-cascade-down-3 js-nav-item"><a href="#" class="nav-link js-nav-link">Bus status</a></li>
                 </ul>
@@ -125,163 +119,32 @@
 
             <!-- Navigation overlay -->
             <div class="nav-overlay js-nav-overlay"></div>
-        </header>
 
-        <!-- Hero image section -->
-        <div class="hero-section js-hero-section" style="background-image: url('../img/tmp-bg.jpg');"></div>
+        </header>
 
         <!-- Main page content -->
         <main class="main-content">
-
-            <!-- Booking -->
-            <div class="homepage-booking">
-                <div class="booking-form-wrapper">
-                    <h1 class="homepage-intro-title">Where would you like to go?</h1>
-                    <!-- TODO: remove this dummy div below -->
-                    <div style="text-align: center; padding-top:30px;"><img src="/img/tmp-homepage-fields.png" alt="From/Tom"></div>
-                </div>
+            <!-- Intro -->
+            <div class="page-header map js-map">
+                <!-- Google street view -->
             </div>
+            <!-- TODO:replace icon -->
+            <div class="btn has-icon js-expand-map-btn">Expand Map <svg class="icon"><use xlink:href="/img/sprite.svg#warning"></use></svg></div>
 
-            <!-- Homepage content -->
-
-            <!-- Bus Passes -->
+            <!-- Bus stop content -->
             <section class="section-container centered-content">
-                <div class="wrapper row">
-                    <h2 class="heading-1">Bus Passes</h2>
-                    <h5 class="subtitle">To suit all types of travellers and budgets with great bonuses!</h5>
-                    <div class="col s12 m6">
-                        <a href="#" class="cardbanner">
-                            <h3 class="cardbanner-title"><strong>Flexi</strong>Pass</h3>
-                            <div class="cardbanner-img-container">
-                                <img class="cardbanner-img" src="/img/tmp/flexipass.jpg" alt="FlexiPass">
-                            </div>
-                            <div class="cardbanner-wrapper">
-                                <div class="cardbanner-note-container">
-                                    <div class="note-1 cardbanner-cascade-up-3">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">15 hours</span>
-                                            <span>$125</span>
-                                        </div>
-                                    </div>
-                                    <div class="note-1 cardbanner-cascade-up-2">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">30 hours</span>
-                                            <span>$239</span>
-                                        </div>
-                                    </div>
-                                    <div class="note-1 cardbanner-cascade-up-1">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">60 hours</span>
-                                            <span>$459</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="cardbanner-description">Build your own itinerary with travel on NZ's largest hop-on/hop-off transport network</p>
-                                <div class="btn-secondary">View passes and buy</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col s12 m6">
-                        <a href="#" class="cardbanner alt">
-                            <h3 class="cardbanner-title"><strong>Travel</strong>Pass</h3>
-                            <div class="cardbanner-img-container" style="background-image: url('../img/tmp/travelpass-map.png');">
-                                <img class="cardbanner-img" src="/img/tmp/travelpass.jpg" alt="TravelPass">
-                            </div>
-                            <div class="cardbanner-wrapper">
-                                <div class="cardbanner-note-container">
-                                    <div class="note-2 cardbanner-cascade-up-0">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">Caves &amp; Caverns</span>
-                                            <span>$279</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="cardbanner-description">Pre-planned transport passes for those wanting a set itinerary but flexible timing</p>
-                                <div class="btn-secondary alt">View passes and buy</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Day Tours -->
-            <section class="section-container dark centered-content">
                 <div class="wrapper">
-                    <h2 class="heading-1">Day Tours</h2>
-                    <h5 class="subtitle">Experience the best tours all round new zealand</h5>
-                    <ul class="cardbox-list row">
-                        <li class="cardbox-list-item multi-sized-grid col s12 m6">
-                            <a class="cardbox has-note" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Hobbiton and Waitomo Day Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note-3">
-                                        <div class="note-content">
-                                            <span class="note-content-extra">Special Deal</span>
-                                            <span>$299</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Milford Sound Coach and Cruise</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Paihia</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Waitomo Caves Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Bay of Islands Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="cardbox-list-item col s12 m3">
-                            <a class="cardbox has-note small" href="#">
-                                <div class="tag">Full Day Tour</div>
-                                <img class="cardbox-img" src="/img/tmp/tours.jpg" alt="-">
-                                <div class="cardbox-info-wrapper">
-                                    <h3 class="cardbox-title">Cape Reinga &amp; 90 Mile Beach Tour</h3>
-                                    <h5 class="cardbox-subtitle">Departs from Auckland</h5>
-                                    <div class="note small">
-                                        <div class="note-content">$299</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <a href="#" class='btn line-through separator'>See all day tours</a>
-
+                    <h2 class="heading-1">Bus Stops</h2>
+                    <h5 class="subtitle">Find intercity bus stops around New Zealand and view timetables before booking travel to/from that stop.</h5>
+                    <div class="txt-field autocomplete-container">
+                        <input id="bus-stop-filter" class="js-auto-complete" type="text" name="bus-stop-filter">
+                        <label for="bus-stop-filter">Filter stop by typing</label>
+                    </div>
+                    <!-- TODO: move this button inside of searchbox -->
+                    <a href="bus-stop-landing.html" class="btn-tertiary" style="margin-bottom: 50px;">See all day tours</a>
+                    <div class="divider"></div>
+                    <h5 class="subtitle">Find intercity bus stops around New Zealand and view timetables before booking travel to/from that stop.</h5>
+                    <div class="table-list-container js-table-bus-stops"></div>
                 </div>
             </section>
         </main>
@@ -344,9 +207,16 @@
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/lib/jquery.js?ver=1.11.3"><\/script>')</script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNKh-SGUTzUrrdi_NzIJwwkMhh7ytUADU"></script>
+        <script src="/js/lib/markerclusterer.js?ver=3.0"></script>
         <script src='/js/lib/jquery.easing.js?ver=1.3'></script>
         <script src='/js/lib/jquery.scrollTo.js?ver=2.1.2'></script>
         <script src='/js/lib/jquery.fancybox.js?ver=3.1.20'></script>
+        <script src='/js/lib/nunjucks-slim.js?ver=3.0.1'></script>
+        <script src='/js/templates.js?ver=1.0.0'></script>
+        <script type="text/javascript">
+            var busStopDataUrl = '/data/mock/bus-stop.json';
+        </script>
         <script src='/js/app.js?ver=1.0.0'></script>
         <script src="/js/lib/svgxuse.js?ver=1.2.6"></script>
         <!--[if IE 9]>
