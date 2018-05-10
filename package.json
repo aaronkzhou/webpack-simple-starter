@@ -83,5 +83,9 @@
     "js-marker-clusterer": "^1.0.0",
     "moment": "^2.22.1",
     "nunjucks": "^3.1.2"
-  }
+  },
+  "babel": {
+    "presets": ["es2015", "stage-0"]
+  },
+  "eslintIgnore": ["hello.js", "world.js"]
 }
