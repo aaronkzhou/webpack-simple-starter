@@ -43,7 +43,7 @@ module.exports = {
       {
         test: /\.njk$/,
         loader: 'nunjucks-loader',
-        include: [resolve('src/scripts/js-templates')]
+        include: [resolve('src/js-templates')]
       },
       {
         test: /\.js/,
@@ -67,7 +67,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpe?g|gif|svg)(\?.*)?$/,
+        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: 'url-loader',
         include: [resolve('img')],
         options: {

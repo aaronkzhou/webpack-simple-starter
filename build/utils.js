@@ -104,7 +104,6 @@ exports.pageFile = function (dev = true) {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       options.chunksSortMode = 'dependency'
     }
-
     list.push(new HtmlWebpackPlugin(options))
   })
 
