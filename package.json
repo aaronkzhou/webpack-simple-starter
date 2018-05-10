@@ -28,7 +28,7 @@
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
     "eslint": "^4.11.0",
-    "eslint-config-standard": "^10.2.1",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^4.0.0",
@@ -75,8 +75,13 @@
     "url": "https://github.com/intercitygroup/intercity/issues"
   },
   "dependencies": {
-    "moment": "^2.22.1",
+    "@fancyapps/fancybox": "^3.3.5",
     "jquery": "^3.3.1",
+    "jquery-date-range-picker": "^1.0.4",
+    "jquery.easing": "^1.4.1",
+    "jquery.scrollto": "^2.1.2",
+    "js-marker-clusterer": "^1.0.0",
+    "moment": "^2.22.1",
     "nunjucks": "^3.1.2"
   }
 }
